@@ -3,7 +3,7 @@ import loginImg from './img/login.png'
 import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import {useNavigate} from "react-router-dom";
 import Loading from "../Loading/Loading";
-import { doc, setDoc, updateDoc, collection, addDoc, getDoc, getDocs } from "firebase/firestore";
+import { doc, collection, addDoc, getDocs } from "firebase/firestore";
 import {db} from "../../shared/api/firebase";
 import {store} from "../../store";
 

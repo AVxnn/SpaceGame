@@ -19,16 +19,25 @@
 // other
 
 .app
-  min-width: 10px
+  background-color: #1B0829
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+
+.container
+
+  width: 100%
+  height: 100vh
   background-color: #1B0829
 
-
 .text-item
-  padding: 8px 16px
+  padding: 14px 20px
   background-color: #281637
   border-radius: 8px
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25)
-  font-size: 22px
+  font-size: 20px
 
 // loading
 
@@ -80,12 +89,16 @@
 
 .game-container
   display: flex
+  justify-content: center
   flex-direction: column
   align-items: center
+  height: 100vh
   max-width: 720px
 
   .planet
     cursor: pointer
+    width: calc(10em + 10vw)
+    height: calc(10em + 10vw)
     transition: all .05s ease-in-out
 
     &:active
@@ -93,7 +106,8 @@
 
   .infobar
     position: absolute
-    top: 10vh
+    top: 16vh
+    font-size: 16px
 
 
 // shop
@@ -102,9 +116,15 @@
   display: flex
   flex-direction: column
   align-items: center
+  margin: 20px
   max-width: 720px
+  width: 100%
 
   .shopbar-container
+    display: flex
+    justify-content: space-between
+    max-width: 450px
+    width: 100%
     height: 46px
 
     a
@@ -124,12 +144,10 @@
     position: relative
     box-sizing: unset
     height: 50vh
-    margin-top: 40px
     overflow: hidden
     overflow-y: scroll
-    left: 14px
-    padding-right: 20px
-    width: 102%
+    width: 100%
+    max-width: 550px
 
     &::-webkit-scrollbar
       width: 10px               /* ширина scrollbar */
@@ -200,6 +218,7 @@
   flex-direction: column
   align-items: center
   width: 100vw
+  margin: 20px
   max-width: 550px
 
   .cup-list
@@ -269,17 +288,19 @@
 
 .navbar-container
   position: absolute
-  bottom: 10vh
+  bottom: 5vh
   display: flex
   justify-content: space-between
+  align-items: center
   max-width: 430px
   width: 80vw
 
   .navbar-item
-    width: 50px
-    height: 50px
     cursor: pointer
     transition: all .1s ease-in-out
+    background-size: calc(2em + 1vw)
+    width: calc(2em + 1vw)
+    height: calc(2em + 1vw)
 
     &:hover
       transform: scale(1.1)
@@ -311,3 +332,138 @@
   position: absolute
   opacity: 1
   transition: opacity 150ms ease-in
+
+
+@media (max-width: 768px)
+
+
+@media (max-width: 462px)
+  .shopbar-container
+
+    a
+      height: 20px
+      text-decoration: none
+
+      .shopbar
+        background-color: #22122F
+        color: #888888
+        transition: all .1s ease-in-out
+
+    a.active > .shopbar
+      background-color: #281637
+      color: #FFFFFF
+
+  .text-item
+    padding: 6px 12px
+    background-color: #281637
+    border-radius: 8px
+    font-size: 16px
+
+  .navbar-container
+
+    .navbar-item
+      background-size: calc(1.6em + 1vw)
+      width: calc(1.6em + 1vw)
+      height: calc(1.6em + 1vw)
+
+  .shop-container
+
+    .shop-list
+      position: relative
+      box-sizing: unset
+      height: 50vh
+      overflow: hidden
+      overflow-y: scroll
+      width: 100%
+      max-width: 550px
+
+      .shop-item
+        position: relative
+        display: flex
+        margin-bottom: 15px
+        justify-content: space-between
+        width: 100%
+        cursor: pointer
+        height: 60px
+        font-size: 12px
+        padding: 12px 24px
+        border-radius: 8px
+        background-color: #3B2B48
+        transition: all .1s ease-in-out
+
+        .shop-info_price
+
+          .shop-price_price
+            font-size: 12px
+
+  .cup-container
+
+    .cup-list
+      position: relative
+      box-sizing: unset
+      height: 50vh
+      margin-top: 40px
+      overflow: hidden
+      overflow-y: scroll
+      width: 100%
+
+
+      .cup-item
+        margin-bottom: 10px
+        justify-content: space-between
+        width: 100%
+        cursor: pointer
+        height: 60px
+        font-size: 12px
+        padding: 12px 24px
+        border-radius: 8px
+        background-color: #3B2B48
+        transition: all .1s ease-in-out
+
+        .cup-info-main
+
+          .cup-star_img
+            width: 35px
+            height: 35px
+
+          .cup-info_item
+            margin-left: 10px
+
+
+@media (max-width: 362px)
+
+  .text-item
+    padding: 6px 12px
+    background-color: #281637
+    border-radius: 8px
+    font-size: 12px
+
+  .shop-container
+
+    .shop-list
+      position: relative
+      box-sizing: unset
+      height: 50vh
+      overflow: hidden
+      overflow-y: scroll
+      width: 100%
+      max-width: 550px
+
+      .shop-item
+        position: relative
+        display: flex
+        margin-bottom: 15px
+        justify-content: space-between
+        width: 100%
+        cursor: pointer
+        height: 60px
+        font-size: 12px
+        padding: 12px 18px
+        border-radius: 8px
+        background-color: #3B2B48
+        transition: all .1s ease-in-out
+
+        .shop-info-main
+
+          .shop-info_item
+            margin-left: 8px

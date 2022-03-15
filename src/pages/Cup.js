@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Navbar from "../widgets/Navbar/Navbar";
 import {collection, getDocs} from "firebase/firestore";
 import {db} from "../shared/api/firebase";
-import {store} from "../store";
-import star from "../widgets/SecondShop/img/star.png";
 import card from "../widgets/SecondShop/img/card.png";
 import Loading from "../features/Loading/Loading";
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { GoogleAuthProvider } from "firebase/auth";
 import AuthGoogle from "../features/authGoogle/AuthGoogle";
 
 const Auth = () => {
