@@ -261,7 +261,7 @@
 }
 
 .navbar-container {
-  position: absolute;
+  position: fixed;
   bottom: 5vh;
   display: flex;
   justify-content: space-between;
