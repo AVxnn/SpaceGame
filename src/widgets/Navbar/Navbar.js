@@ -6,7 +6,7 @@ const Navbar = () => {
         <>
             <section className='navbar-container'>
                 <NavLink className='navbar-item game' to='/game'></NavLink>
-                <NavLink className='navbar-item shop' to='/shop'></NavLink>
+                <NavLink className='navbar-item shop' to='/shop/click'></NavLink>
                 <NavLink className='navbar-item cup' to='/cup'></NavLink>
             </section>
         </>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +22,7 @@
   background-color: #1B0829;
   width: 100%;
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -32,12 +34,17 @@
   background-color: #1B0829;
 }
 
-.text-item {
+.item {
+  position: relative;
   padding: 14px 20px;
   background-color: #281637;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   font-size: 20px;
+}
+
+.close {
+  background-color: #261930 !important;
 }
 
 .loading {
@@ -81,69 +88,84 @@
 
 .game-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
   height: 100vh;
   max-width: 720px;
 }
 .game-container .planet {
+  position: relative;
+  top: 5vh;
   cursor: pointer;
-  width: calc(10em + 10vw);
-  height: calc(10em + 10vw);
+  width: calc(12em + 10vw);
+  height: calc(12em + 10vw);
   transition: all 0.05s ease-in-out;
 }
 .game-container .planet:active {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
-.game-container .infobar {
-  position: absolute;
-  top: 16vh;
-  font-size: 16px;
+.game-container .info-nav-item {
+  position: relative;
+  padding: 14px 32px;
+  background-color: #281637;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  top: 10vh;
+  font-size: 20px;
 }
 
 .shop-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  justify-content: space-between;
+  margin: 14px;
   max-width: 720px;
+  height: 100vh;
   width: 100%;
 }
 .shop-container .shopbar-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 450px;
   width: 100%;
-  height: 46px;
+  margin: 10px 0;
+  height: 10vh;
+  min-height: 50px;
+  font-size: 16px;
 }
 .shop-container .shopbar-container a {
   height: 20px;
+  position: relative;
   text-decoration: none;
 }
-.shop-container .shopbar-container a .shopbar {
+.shop-container .shopbar-container a .shop-nav-item {
+  height: 50px;
   background-color: #22122F;
   color: #888888;
   transition: all 0.1s ease-in-out;
 }
-.shop-container .shopbar-container a.active > .shopbar {
+.shop-container .shopbar-container a.active > .shop-nav-item {
   background-color: #281637;
   color: #FFFFFF;
 }
 .shop-container .shop-list {
   position: relative;
   box-sizing: unset;
-  height: 50vh;
+  height: 80vh;
   overflow: hidden;
   overflow-y: scroll;
   width: 100%;
   max-width: 550px;
 }
 .shop-container .shop-list::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
+  position: absolute;
 }
 .shop-container .shop-list::-webkit-scrollbar-thumb {
-  background-color: #3B2B48;
+  background-color: #1a131f;
   border-radius: 20px;
 }
 .shop-container .shop-list .shop-item {
@@ -179,6 +201,9 @@
   justify-content: space-between;
   height: 100%;
 }
+.shop-container .shop-list .shop-item .shop-info-main .shop-info_item .shop-item_description {
+  color: #BDBDBD;
+}
 .shop-container .shop-list .shop-item .shop-info_price {
   display: flex;
   flex-direction: column;
@@ -198,18 +223,47 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   width: 100vw;
-  margin: 20px;
+  height: 100vh;
+  margin: 15px;
   max-width: 550px;
+}
+.cup-container .cupbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+  height: 11vh;
+  min-height: 70px;
+  width: 100%;
+  font-size: 16px;
+}
+.cup-container .cupbar-container a {
+  text-decoration: none;
+  height: 20px;
+}
+.cup-container .cupbar-container a .cup-nav-item {
+  height: 50px;
+  background-color: #281637;
+  color: #fff;
+  transition: all 0.1s ease-in-out;
 }
 .cup-container .cup-list {
   position: relative;
   box-sizing: unset;
-  height: 50vh;
-  margin-top: 40px;
+  height: 80vh;
   overflow: hidden;
   overflow-y: scroll;
   width: 100%;
+}
+.cup-container .cup-list::-webkit-scrollbar {
+  width: 6px;
+}
+.cup-container .cup-list::-webkit-scrollbar-thumb {
+  background-color: #1a131f;
+  /* цвет плашки */
+  border-radius: 20px;
 }
 .cup-container .cup-list .cup-item {
   position: relative;
@@ -245,6 +299,9 @@
   justify-content: space-between;
   height: 100%;
 }
+.cup-container .cup-list .cup-item .cup-info-main .cup-info_item .cup-item_description {
+  color: #BDBDBD;
+}
 .cup-container .cup-list .cup-item .cup-info_price {
   display: flex;
   flex-direction: column;
@@ -261,12 +318,12 @@
 }
 
 .navbar-container {
-  position: fixed;
   bottom: 5vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 430px;
+  max-width: 300px;
+  padding: 4vh 0;
   width: 80vw;
 }
 .navbar-container .navbar-item {
@@ -310,27 +367,35 @@
 }
 
 @media (max-width: 462px) {
+  .shopbar-container {
+    height: 6vh;
+    min-height: 20px;
+    margin: 0;
+  }
   .shopbar-container a {
     height: 20px;
     text-decoration: none;
   }
-  .shopbar-container a .shopbar {
+  .shopbar-container a .shop-nav-item {
     background-color: #22122F;
     color: #888888;
     transition: all 0.1s ease-in-out;
   }
-  .shopbar-container a.active > .shopbar {
+  .shopbar-container a.active > .shop-nav-item {
     background-color: #281637;
     color: #FFFFFF;
   }
 
-  .text-item {
-    padding: 6px 12px;
+  .item {
+    padding: 2vw 4vw;
     background-color: #281637;
     border-radius: 8px;
     font-size: 16px;
   }
 
+  .navbar-container {
+    max-width: 200px;
+  }
   .navbar-container .navbar-item {
     background-size: calc(1.6em + 1vw);
     width: calc(1.6em + 1vw);
@@ -340,7 +405,6 @@
   .shop-container .shop-list {
     position: relative;
     box-sizing: unset;
-    height: 50vh;
     overflow: hidden;
     overflow-y: scroll;
     width: 100%;
@@ -353,9 +417,9 @@
     justify-content: space-between;
     width: 100%;
     cursor: pointer;
-    height: 60px;
-    font-size: 12px;
-    padding: 12px 24px;
+    height: 88px;
+    font-size: 14px;
+    padding: 22px 36px;
     border-radius: 8px;
     background-color: #3B2B48;
     transition: all 0.1s ease-in-out;
@@ -364,47 +428,55 @@
     font-size: 12px;
   }
 
+  .cup-container .cupbar-container {
+    display: flex;
+    justify-content: center;
+    max-width: 450px;
+    width: 100%;
+    font-size: 16px;
+  }
+  .cup-container .cupbar-container .cup-nav-item {
+    padding: 10px 24px;
+    color: #fff;
+    background-color: #22122F;
+    transition: all 0.1s ease-in-out;
+  }
   .cup-container .cup-list {
     position: relative;
-    box-sizing: unset;
-    height: 50vh;
-    margin-top: 40px;
     overflow: hidden;
     overflow-y: scroll;
     width: 100%;
   }
   .cup-container .cup-list .cup-item {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     justify-content: space-between;
     width: 100%;
     cursor: pointer;
-    height: 60px;
-    font-size: 12px;
-    padding: 12px 24px;
+    height: 80px;
+    font-size: 14px;
+    padding: 18px 28px;
     border-radius: 8px;
     background-color: #3B2B48;
     transition: all 0.1s ease-in-out;
   }
   .cup-container .cup-list .cup-item .cup-info-main .cup-star_img {
-    width: 35px;
-    height: 35px;
+    width: 43px;
+    height: 43px;
   }
   .cup-container .cup-list .cup-item .cup-info-main .cup-info_item {
-    margin-left: 10px;
+    margin-left: 16px;
   }
 }
 @media (max-width: 362px) {
-  .text-item {
-    padding: 6px 12px;
+  .input {
     background-color: #281637;
     border-radius: 8px;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .shop-container .shop-list {
     position: relative;
     box-sizing: unset;
-    height: 50vh;
     overflow: hidden;
     overflow-y: scroll;
     width: 100%;
@@ -417,15 +489,25 @@
     justify-content: space-between;
     width: 100%;
     cursor: pointer;
-    height: 60px;
+    height: 80px;
     font-size: 12px;
-    padding: 12px 18px;
+    padding: 20px 24px;
     border-radius: 8px;
     background-color: #3B2B48;
     transition: all 0.1s ease-in-out;
   }
   .shop-container .shop-list .shop-item .shop-info-main .shop-info_item {
-    margin-left: 8px;
+    margin-left: 12px;
+  }
+}
+@media (max-width: 362px) {
+  .item {
+    font-size: 12px;
+  }
+}
+@media (max-width: 282px) {
+  .item {
+    font-size: 10px;
   }
 }
 

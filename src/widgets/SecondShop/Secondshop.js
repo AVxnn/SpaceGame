@@ -1,12 +1,12 @@
 import React from 'react';
-import star from './img/star.png'
-import card from './img/card.png'
-import {data} from '../../shared/data'
+import star from '../../img/star.png'
+import card from '../../img/card.png'
+import {secondData} from '../../shared/data'
 
 const SecondShop = () => {
     return (
         <>
-            {data.map((item, index) => {
+            {secondData.map((item, index) => {
                 return (
                     <section className='shop-item'>
                         <section className='shop-info-main'>

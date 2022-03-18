@@ -7,7 +7,7 @@ const InfoBar = () => {
 
     return (
         <>
-            <span className='infobar text-item'>{money.toFixed(3)}</span>
+            <span className='info-nav-item'>{money.toFixed(3)}</span>
         </>
     );
 };

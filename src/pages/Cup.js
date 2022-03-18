@@ -2,8 +2,9 @@ import React, {useEffect, useState} from 'react';
 import Navbar from "../widgets/Navbar/Navbar";
 import {collection, getDocs} from "firebase/firestore";
 import {db} from "../shared/api/firebase";
-import card from "../widgets/SecondShop/img/card.png";
+import card from "../img/card.png";
 import Loading from "../features/Loading/Loading";
+import Cupbar from "../widgets/Cupbar/Cupbar";
 
 const Cup = () => {
 
@@ -30,6 +31,7 @@ const Cup = () => {
     return (
         <>
             <section className='cup-container'>
+                <Cupbar/>
                 <section className='cup-list'>
                     {profiles ? profiles.map((profile, i) => {
                         return (

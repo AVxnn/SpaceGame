@@ -5,7 +5,6 @@ import InfoBar from "../widgets/Infobar/InfoBar";
 import PlanetClicker from "../widgets/PlanetClicker/PlanetClicker";
 
 const Game = () => {
-
     const auth = getAuth()
     return (
         <>

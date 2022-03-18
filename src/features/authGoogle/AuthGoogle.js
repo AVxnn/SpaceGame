@@ -3,7 +3,7 @@ import loginImg from './img/login.png'
 import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import {useNavigate} from "react-router-dom";
 import Loading from "../Loading/Loading";
-import { doc, collection, addDoc, getDocs } from "firebase/firestore";
+import { doc, collection, addDoc, getDocs, query, orderBy } from "firebase/firestore";
 import {db} from "../../shared/api/firebase";
 import {store} from "../../store";
 
@@ -23,7 +23,7 @@ const AuthGoogle = () => {
                 setLoading(false)
             });
 
-        const querySnapshot = await getDocs(collection(db, "users"));
+        const querySnapshot = await getDocs(query(collection(db, "users"), orderBy('count')));
         querySnapshot.forEach((doc) => {
             if (doc.data().id === auth.currentUser.uid) {
                 store.dispatch({ type: 'ADD_MONEY', payload: doc.data().count})

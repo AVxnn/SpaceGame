@@ -4,6 +4,7 @@ import {createStore, applyMiddleware, compose} from "redux";
 
 const defaultState = {
     money: 0,
+    click: 0.001,
     auth: {},
 }
 

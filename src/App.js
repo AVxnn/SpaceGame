@@ -7,6 +7,7 @@ import Shop from "./pages/Shop";
 import Cup from "./pages/Cup";
 import SecondShop from "./widgets/SecondShop/Secondshop";
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import ClickShop from "./widgets/ClickShop/ClickShop";
 
 function App() {
 
@@ -35,14 +36,16 @@ function App() {
                                     </PrivateRoute>
                                 }>
                                     <Route path='second' element={<SecondShop />}/>
-                                    <Route path='click' element={<h1>click</h1>}/>
+                                    <Route path='click' element={<ClickShop />}/>
                                     <Route path='bonus' element={<h1>bonus</h1>}/>
                                 </Route>
                                 <Route path='cup' element={
                                     <PrivateRoute>
                                         <Cup />
                                     </PrivateRoute>
-                                }/>
+                                }>
+                                    <Route path='second' element={<SecondShop />}/>
+                                </Route>
                             </Route>
                         </Routes>
                     </CSSTransition>
